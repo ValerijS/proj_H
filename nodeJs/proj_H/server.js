@@ -16,7 +16,7 @@ var passport       = require('passport');
 var LocalStrategy  = require('passport-local').Strategy;
 var requireTree              = require('require-tree');
 var controllers              = requireTree('./api/controllers');
-var admin = require('./api/routes/admin');
+var admin = require('./api/routes/admin');//look request urls in this file
 app.use(session({secret: 'ssshhhhh'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
