@@ -13,13 +13,13 @@ router.route('/admin')
   .get(controllers.admin_schools, controllers.render('views/boots_tiles_05_09_a.pug'))
   .post(controllers.pupils_of_school, controllers.render('views/Pupil_tabl_input_01_09.pug'));
 
-router.delete('/admin_schools/:id', controllers.mustAuthenticatedMw, controllers.deleting_school_04_09_a);
+router.get('/admin/delete_school/:id', controllers.mustAuthenticatedMw, controllers.deleting_school_04_09_a);
 
-router.put('/admin_schools/:name', controllers.mustAuthenticatedMw, controllers.insert_new_school_04_09_a, controllers.render('views/boots_tiles_05_09_a.pug'));
+router.get('/admin/put_school/:name', controllers.mustAuthenticatedMw, controllers.insert_new_school_04_09_a, controllers.render('views/boots_tiles_05_09_a.pug'));
 
-router.delete('/admin_pupils/:id', controllers.mustAuthenticatedMw, controllers.deleting_pupil_05_09);
+router.get('/admin/delete_pupil/:id', controllers.mustAuthenticatedMw, controllers.deleting_pupil_05_09);
 
-router.put('/admin_pupils/:F_name/:L_name/:school', controllers.mustAuthenticatedMw, controllers.insert_new_pupil_05_09, controllers.render('views/Pupil_tabl_input_01_09.pug')); 
+router.get('/admin/pupil/:F_name/:L_name/:school', controllers.mustAuthenticatedMw, controllers.insert_new_pupil_05_09, controllers.render('views/Pupil_tabl_input_01_09.pug')); 
 
 router.post('/updata_pupils', urlencodedParser, controllers.update_pupil_1);
 
