@@ -2,19 +2,19 @@ module.exports =function (req, res, next) {
     const pug = require('pug');
     var table = 'School';    
     const School = require(process.cwd()+'/'+'/db').Pupil;
-    if (req.params.L_name && req.params.F_name && req.params.school){   
+    if (req.query.L_name && req.query.F_name && req.query.school){   
         School.findOrCreate(
-             {where: {firstName: req.params.F_name,
-                     lastName: req.params.L_name,
-                     school: req.params.school
+             {where: {firstName: req.query.F_name,
+                     lastName: req.query.L_name,
+                     school: req.query.school
                      }
              }
          )          
          .then(()=>{
-             School.findAll({
-                 attributes: {
-                     exclude: ['createdAt', 'updatedAt']
-                  }
+             School.findAll(
+              {where: {
+                          school: req.query.school
+                      }
               })
               .then((result) => {
                   variables = {
