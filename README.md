@@ -12,7 +12,7 @@
     After registration (link "Registration") and 'log in' (link "Admin", when enter first time in session  and  up to log out).
     Then you can:
     -- change any field, of any column of 'schools' and 'pupils' (but not "id") by write and enter new value;
-    -- put new "school" - enter in the browser: localhost:3000/admin/put_school/:"name on number of school";
+    -- put new "school" - enter in the browser: localhost:3000/admin/put_school/"name on number of school";
     -- put new "pupil" - enter in the browser: localhost:3000/admin/put_pupil/?F_name="First name"&L_name="Last name"&
     school=id of school;
     -- delete "school" - enter in the browser: localhost:3000/get_form_delete_school.html;
