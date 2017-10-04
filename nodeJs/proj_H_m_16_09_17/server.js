@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const pug = require('pug');
-const User = require('./db').Administrator;
+const User = require('process.cwd()+'/'+'db').Administrator;
 const mustAuthenticatedMw = require('./api/controllers/mustAuthenticatedMw');
 // Middlewares, которые должны быть определены до passport:
 app.use(cookieParser());
