@@ -4,7 +4,7 @@
 
   var passport       = require('passport');
   var LocalStrategy  = require('passport-local').Strategy;
- const User = require('C:/nodeJs/todoListApi/db').Administrator;
+ const User = require(process.cwd()+'/'+'/db').Administrator;
   
   module.exports = function() {
       passport.use(new LocalStrategy({
