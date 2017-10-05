@@ -24,7 +24,7 @@ router.get('/admin/delete_pupil/:id', controllers.mustAuthenticatedMw, controlle
 //<<<<<<< HEAD
 router.get('/admin/put_pupil', controllers.mustAuthenticatedMw,controllers.insert_new_pupil_05_09, controllers.render('views/Pupil_tabl_input_01_09.pug')); 
 //=======
-router.get('/admin/put_pupil/:F_name/:L_name/:school', controllers.mustAuthenticatedMw, controllers.insert_new_pupil_05_09, controllers.render('views/Pupil_tabl_input_01_09.pug')); 
+router.get('/admin/put_pupil?F_name&L_name&school', controllers.mustAuthenticatedMw, controllers.insert_new_pupil_05_09, controllers.render('views/Pupil_tabl_input_01_09.pug')); 
 //>>>>>>> 332551bbaa64319f4580b74ccfed9f908cdb4c8d
 
 router.post('/updata_pupils', urlencodedParser, controllers.update_pupil_1);
